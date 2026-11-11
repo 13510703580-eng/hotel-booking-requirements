@@ -1,0 +1,29 @@
+compileall: 全部模块编译通过
+
+字节码编译结果：
+  OK  hotel_booking/__init__.py  (3 行)
+  OK  hotel_booking/api/__init__.py  (1 行)
+  OK  hotel_booking/api/application.py  (64 行)
+  OK  hotel_booking/cli/__init__.py  (1 行)
+  OK  hotel_booking/cli/app.py  (295 行)
+  OK  hotel_booking/data/__init__.py  (1 行)
+  OK  hotel_booking/data/database.py  (88 行)
+  OK  hotel_booking/data/repositories.py  (731 行)
+  OK  hotel_booking/data/schema.py  (107 行)
+  OK  hotel_booking/data/seed.py  (126 行)
+  OK  hotel_booking/domain/__init__.py  (1 行)
+  OK  hotel_booking/domain/entities.py  (166 行)
+  OK  hotel_booking/domain/enums.py  (80 行)
+  OK  hotel_booking/domain/errors.py  (185 行)
+  OK  hotel_booking/domain/rules.py  (198 行)
+  OK  hotel_booking/service/__init__.py  (1 行)
+  OK  hotel_booking/service/auth.py  (224 行)
+  OK  hotel_booking/service/booking.py  (569 行)
+  OK  hotel_booking/service/hotel.py  (305 行)
+  OK  hotel_booking/service/inventory.py  (269 行)
+  OK  hotel_booking/service/log.py  (108 行)
+  OK  hotel_booking/service/statistics.py  (183 行)
+
+说明：Python 为解释型语言，`python3 -m compileall` 会把每个模块编译成
+__pycache__ 下的 .pyc 字节码，语法错误会在这一步暴露；随后运行
+`python3 scripts/demo.py` 即实际执行程序。
