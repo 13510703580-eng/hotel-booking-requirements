@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hotel-booking"
+version = "1.0.0"
+description = "Hotel booking system of experiment three"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pylint>=3"]
+
+[project.scripts]
+hotel-booking = "hotel_booking.cli.app:main"
+
+[tool.setuptools]
+packages = [
+    "hotel_booking",
+    "hotel_booking.domain",
+    "hotel_booking.data",
+    "hotel_booking.service",
+    "hotel_booking.api",
+    "hotel_booking.cli",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.pylint.main]
+py-version = "3.12"

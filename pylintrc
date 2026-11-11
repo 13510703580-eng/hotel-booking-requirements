@@ -1,0 +1,33 @@
+# pylint configuration aligned with Google Python Style Guide.
+# Only the thresholds that legitimately differ for this project are
+# relaxed, each with a comment explaining why.
+
+[MASTER]
+ignore=scripts
+jobs=1
+
+[MESSAGES CONTROL]
+# The audit log is written from every service with the same field set;
+# that repetition is intentional and keeps each call self-explanatory.
+disable=duplicate-code
+
+[FORMAT]
+max-line-length=80
+
+[BASIC]
+# Loop counters and throw-away names allowed by Google style.
+good-names=i,j,k,ex,Run,_
+
+[DESIGN]
+# Entities (Booking, OperationLog) and repository methods naturally
+# carry many fields / parameters; grouping them into objects would
+# hide the data flow rather than clarify it.
+max-attributes=20
+max-args=8
+max-positional-arguments=8
+max-locals=20
+min-public-methods=0
+
+[REPORTS]
+output-format=text
+score=yes
