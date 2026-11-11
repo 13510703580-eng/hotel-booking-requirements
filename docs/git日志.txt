@@ -1,49 +1,9 @@
-4702e1f docs: 需求映射与运行说明
- README.md | 97 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 97 insertions(+)
-bb2bec3 test: 68 个单元测试与端到端演示脚本
- scripts/demo.py           | 183 +++++++++++++++++++++++++++++++++++++++++++
- tests/conftest.py         |  39 ++++++++++
- tests/test_auth.py        |  75 ++++++++++++++++++
- tests/test_booking.py     | 194 ++++++++++++++++++++++++++++++++++++++++++++++
- tests/test_concurrency.py |  63 +++++++++++++++
- tests/test_domain.py      |  94 ++++++++++++++++++++++
- tests/test_inventory.py   |  99 +++++++++++++++++++++++
- tests/test_statistics.py  |  98 +++++++++++++++++++++++
- tests/test_transaction.py | 126 ++++++++++++++++++++++++++++++
- 9 files changed, 971 insertions(+)
-17dcf70 feat(ui): 应用装配与命令行交互界面
- hotel_booking/api/__init__.py    |   1 +
- hotel_booking/api/application.py |  64 +++++++++
- hotel_booking/cli/__init__.py    |   1 +
- hotel_booking/cli/app.py         | 295 +++++++++++++++++++++++++++++++++++++++
- 4 files changed, 361 insertions(+)
-377b31b feat(service): 认证、日志、库存、预订、酒店与统计服务
- hotel_booking/service/__init__.py   |   1 +
- hotel_booking/service/auth.py       | 224 ++++++++++++++
- hotel_booking/service/booking.py    | 569 ++++++++++++++++++++++++++++++++++++
- hotel_booking/service/hotel.py      | 305 +++++++++++++++++++
- hotel_booking/service/inventory.py  | 269 +++++++++++++++++
- hotel_booking/service/log.py        | 108 +++++++
- hotel_booking/service/statistics.py | 183 ++++++++++++
- 7 files changed, 1659 insertions(+)
-ab6e3a5 feat(data): SQLite 表结构、事务封装、仓储与种子数据
- hotel_booking/data/__init__.py     |   1 +
- hotel_booking/data/database.py     |  88 +++++
- hotel_booking/data/repositories.py | 731 +++++++++++++++++++++++++++++++++++++
- hotel_booking/data/schema.py       | 107 ++++++
- hotel_booking/data/seed.py         | 126 +++++++
- 5 files changed, 1053 insertions(+)
-5142ac1 feat(domain): 实体、枚举、状态机与可行动错误
- hotel_booking/domain/__init__.py |   1 +
- hotel_booking/domain/entities.py | 166 ++++++++++++++++++++++++++++++++
- hotel_booking/domain/enums.py    |  80 ++++++++++++++++
- hotel_booking/domain/errors.py   | 185 ++++++++++++++++++++++++++++++++++++
- hotel_booking/domain/rules.py    | 198 +++++++++++++++++++++++++++++++++++++++
- 5 files changed, 630 insertions(+)
-103b436 chore: 初始化工程结构与风格检查配置
- .gitignore                | 10 ++++++++++
- hotel_booking/__init__.py |  3 +++
- pylintrc                  | 33 +++++++++++++++++++++++++++++++++
- pyproject.toml            | 33 +++++++++++++++++++++++++++++++++
- 4 files changed, 79 insertions(+)
+303f741 docs: 调整报告措辞并重新渲染 PDF
+756ce36 docs: 实验报告、运行证据与配图脚本
+8f676d8 docs: 需求映射与运行说明
+8e152ca test: 68 个单元测试与端到端演示脚本
+18775cc feat(ui): 应用装配与命令行交互界面
+735b7f5 feat(service): 认证、日志、库存、预订、酒店与统计服务
+2a5e744 feat(data): SQLite 表结构、事务封装、仓储与种子数据
+121db7a feat(domain): 实体、枚举、状态机与可行动错误
+09a063d chore: 初始化工程结构与风格检查配置

@@ -110,7 +110,7 @@
 遵守 Google Python 风格 & \texttt{pylintrc}，pylint 评分 10.00/10 & 完成 \\
 大模型辅助并记录 & 第 \ref{sec:llm} 节，含四个真实的返工案例 & 完成 \\
 编译并运行 & \texttt{compileall} 全量通过，\texttt{demo.py} 十三个场景 & 完成 \\
-Git 本地与远程仓库 & 本地仓库 7 次提交；远程仓库待托管 & 本地完成 \\
+Git 本地与远程仓库 & 已推送至 GitHub 远程仓库 & 完成 \\
 单元测试 & 68 个用例，含 20 线程并发抢房 & 完成 \\
 \bottomrule
 \end{tabularx}
@@ -435,13 +435,15 @@ Google Python 风格的主要约束是 80 列行宽、完整的模块与函数�
 \toprule
 提交 & 内容 \\
 \midrule
-\texttt{103b436} & 初始化工程结构与风格检查配置 \\
-\texttt{5142ac1} & 领域层：实体、枚举、状态机与可行动错误 \\
-\texttt{ab6e3a5} & 数据层：表结构、事务封装、仓储与种子数据 \\
-\texttt{377b31b} & 服务层：认证、日志、库存、预订、酒店与统计 \\
-\texttt{17dcf70} & 界面层：应用装配与命令行交互 \\
-\texttt{bb2bec3} & 测试：68 个单元测试与端到端演示脚本 \\
-\texttt{4702e1f} & 文档：需求映射与运行说明 \\
+\texttt{09a063d} & 初始化工程结构与风格检查配置 \\
+\texttt{121db7a} & 领域层：实体、枚举、状态机与可行动错误 \\
+\texttt{2a5e744} & 数据层：表结构、事务封装、仓储与种子数据 \\
+\texttt{735b7f5} & 服务层：认证、日志、库存、预订、酒店与统计 \\
+\texttt{18775cc} & 界面层：应用装配与命令行交互 \\
+\texttt{8e152ca} & 测试：68 个单元测试与端到端演示脚本 \\
+\texttt{8f676d8} & 文档：需求映射与运行说明 \\
+\texttt{756ce36} & 文档：实验报告、运行证据与配图脚本 \\
+\texttt{303f741} & 文档：调整报告措辞并重新渲染 PDF \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -449,12 +451,30 @@ Google Python 风格的主要约束是 80 列行宽、完整的模块与函数�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.72\textwidth]{git日志.png}
-\caption{本地仓库提交记录与文件变更统计}
+\caption{本地仓库的分层提交记录}
 \end{figure}
 
 \subsection{远程托管}
 
-按任务要求，远程仓库选择 GitHub 或 Gitee，通过 \texttt{git remote add origin} 关联后用 \texttt{git push -u origin main} 推送。截图与仓库地址在托管完成后补充到本节。
+远程仓库选择 GitHub 托管，主分支为 \texttt{main}。该仓库此前已用于存放实验一的需求材料，因此推送前先抓取远端分支，再用 \texttt{git rebase origin/main} 把本地九次提交线性接在远端两个已有提交之后：既不覆盖 \texttt{requirement.md} 等既有文件，也避免合并提交造成的平行历史。
+
+\begin{lstlisting}
+$ git remote add origin \
+    git@github.com:13510703580-eng/hotel-booking-requirements.git
+$ git fetch origin && git rebase origin/main
+$ git push -u origin main
+   e5e3f91..303f741  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+\end{lstlisting}
+
+写权限通过部署密钥授予：在仓库的 Settings 与 Deploy keys 中添加本机公钥并勾选 Allow write access。这种方式只对该仓库有效，实验结束后可在页面上直接删除，不需要提供账号级令牌。推送后远端同时保留实验一的三份材料与本次实现的全部提交历史，仓库首页的文件列表、提交说明与语言统计见图 \ref{fig:github}。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{github仓库.png}
+\caption{GitHub 远程仓库：11 次提交、五个目录与语言统计}
+\label{fig:github}
+\end{figure}
 
 \section{问题与反思}
 
